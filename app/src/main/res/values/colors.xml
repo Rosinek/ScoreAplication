@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/purple</color>
+    <color name="colorPrimaryDark">@color/darkPurple</color>
+    <color name="colorAccent">@color/white</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="purple">#8f42f4</color>
+    <color name="darkPurple">#5f04d6</color>
+
+    <color name="grey">#a8a8a8</color>
+    <color name="darkGrey">#6f6f70</color>
+    <color name="russianRed">#b21726</color>
+
+    <color name="CF">#54965f</color>
+    <color name="EuroL">#5c8ad8</color>
+    <color name="CLQF">#a1cea0</color>
+    <color name="Releg">#f29685</color>
+
+</resources>
