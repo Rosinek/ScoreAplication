@@ -9,7 +9,7 @@ import org.simpleframework.xml.Root;
  */
 
 @Root(name = "enclosure")
-class Enclosure {
+public class Enclosure {
 
     @Attribute(name = "length",required = false)
     private String length;

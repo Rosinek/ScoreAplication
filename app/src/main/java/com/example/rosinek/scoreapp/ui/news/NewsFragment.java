@@ -56,7 +56,7 @@ public class NewsFragment extends Fragment implements NewsView {
     @Override
     public void showNews(ArrayList<NewsItem> news) {
         newsItems = news;
-        NewsAdapter adapter = new NewsAdapter(news, this);
+        NewsAdapter adapter = new NewsAdapter(news, this, getActivity());
         rvNews.setAdapter(adapter);
     }
 

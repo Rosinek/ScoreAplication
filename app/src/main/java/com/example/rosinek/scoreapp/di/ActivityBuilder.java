@@ -7,6 +7,8 @@ import com.example.rosinek.scoreapp.ui.main.MainActivityBuilder;
 import com.example.rosinek.scoreapp.ui.main.MainActivityModule;
 import com.example.rosinek.scoreapp.ui.splash.SplashActivity;
 import com.example.rosinek.scoreapp.ui.splash.SplashModule;
+import com.example.rosinek.scoreapp.ui.webviewer.WebViewerActivity;
+import com.example.rosinek.scoreapp.ui.webviewer.WebViewerModule;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -22,6 +24,9 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = LoginModule.class)
     abstract LoginActivity bindLoginActivity();
+
+    @ContributesAndroidInjector(modules = WebViewerModule.class)
+    abstract WebViewerActivity bindWebViewerActivity();
 
     @ActivityScope
     @ContributesAndroidInjector(modules = {MainActivityModule.class, MainActivityBuilder.class})

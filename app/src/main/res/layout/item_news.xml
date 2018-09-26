@@ -8,7 +8,7 @@
     android:id="@+id/item_container">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_news"
         android:layout_width="60dp"
         android:layout_height="100dp"
         android:layout_marginStart="2dp"
@@ -33,8 +33,8 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/tv_date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/iv_news"
+        app:layout_constraintTop_toTopOf="@+id/iv_news" />
 
     <TextView
         android:id="@+id/tv_date"
@@ -46,9 +46,9 @@
         android:layout_marginTop="8dp"
         android:clickable="false"
         android:textColor="@color/russianRed"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_news"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/iv_news"
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <ImageView
