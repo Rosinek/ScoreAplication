@@ -28,7 +28,7 @@ import dagger.android.support.HasSupportFragmentInjector;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, HasSupportFragmentInjector {
 
-    boolean doubleBackToExitPressedOnce = false;
+    private boolean doubleBackToExitPressedOnce = false;
 
     @BindView(R.id.spinner)
     Spinner spinner;
@@ -48,17 +48,40 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         initspinner();
     }
 
-    private void initspinner() {
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.menus, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(R.layout.item_spinner);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         changeFragment(adapterView);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            System.exit(0);
+        }
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
+    }
+
+    @Override
+    public AndroidInjector<Fragment> supportFragmentInjector() {
+        return dispatchingAndroidInjector;
+    }
+
+    private void initspinner() {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.menus, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(R.layout.item_spinner);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
     }
 
     private void changeFragment(AdapterView<?> adapterView) {
@@ -80,24 +103,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         transaction.addToBackStack(null);
         transaction.commit();
 
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            System.exit(0);
-        }
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
-        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
-    }
-
-    @Override
-    public AndroidInjector<Fragment> supportFragmentInjector() {
-        return dispatchingAndroidInjector;
     }
 }

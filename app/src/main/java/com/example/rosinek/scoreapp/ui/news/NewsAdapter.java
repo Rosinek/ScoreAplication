@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.rosinek.scoreapp.R;
 import com.example.rosinek.scoreapp.model.Api.RSS.NewsItem;
-import com.example.rosinek.scoreapp.utils.PhotoUtils;
 import com.example.rosinek.scoreapp.utils.TimeUtils;
 
 import java.util.List;
@@ -52,7 +51,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
         holder.tvTitle.setText(newsItem.getTitle());
 
-        holder.tvDate.setText(TimeUtils.getPreparedDate(newsItem.getPubDate(),"E, dd MMM yyyy hh:mm:ss Z"));
+        holder.tvDate.setText(TimeUtils.getPreparedDate(newsItem.getPubDate(),"EEE, dd MMM yyyy HH:mm:ss Z"));
 
         setPhoto(holder.ivNews,newsItem);
 

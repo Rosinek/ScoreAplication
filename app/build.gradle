@@ -51,10 +51,6 @@ dependencies {
     kapt 'com.jakewharton:butterknife-compiler:8.8.1'
     //Permissions:
     implementation 'com.karumi:dexter:4.2.0'
-    //Google Play Location Services:
-    implementation 'com.google.android.gms:play-services-location:15.0.1'
-    //Firebase Auth:
-    implementation 'com.google.firebase:firebase-auth:16.0.3'
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     //Retrofit XML Converter

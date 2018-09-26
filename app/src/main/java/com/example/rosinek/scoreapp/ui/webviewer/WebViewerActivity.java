@@ -1,9 +1,8 @@
 package com.example.rosinek.scoreapp.ui.webviewer;
 
 import android.annotation.SuppressLint;
-import android.preference.Preference;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 

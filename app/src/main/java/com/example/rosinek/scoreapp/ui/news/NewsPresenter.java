@@ -11,8 +11,8 @@ import com.example.rosinek.scoreapp.model.Api.RSS.Rss;
  */
 public class NewsPresenter {
 
-    ApiService service;
-    NewsView view;
+    private ApiService service;
+    private NewsView view;
 
     public NewsPresenter(ApiService service, NewsView view) {
         this.service = service;
@@ -20,7 +20,7 @@ public class NewsPresenter {
         getNews();
     }
 
-    private void getNews() {
+    public void getNews() {
         service.getNews().enqueue(new ApiCallback<Rss>(view) {
             @Override
             public void onSuccess(Rss result) {

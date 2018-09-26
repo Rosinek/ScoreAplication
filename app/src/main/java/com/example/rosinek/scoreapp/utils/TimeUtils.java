@@ -1,7 +1,6 @@
 package com.example.rosinek.scoreapp.utils;
 
 import android.annotation.SuppressLint;
-import android.util.Log;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

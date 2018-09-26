@@ -79,7 +79,7 @@ public class ScoresFragment extends Fragment implements ScoresView {
 
     @Override
     public void updateDate(String result) {
-        tvDate.setText(TimeUtils.getPreparedDate(result,"yyyy-MM-dd"));
+        tvDate.setText(TimeUtils.getPreparedDate(result, "yyyy-MM-dd"));
     }
 
     private void initScoresRecyclerView() {
@@ -90,7 +90,7 @@ public class ScoresFragment extends Fragment implements ScoresView {
 
     private void setAutoRefresh() {
         handler.postDelayed(runnable = () ->
-                presenter.getScores(), 8000);
+                presenter.getScores(), 30000);
     }
 
 }

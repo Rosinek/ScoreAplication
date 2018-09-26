@@ -14,7 +14,7 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
 /**
- *Created by Grzegorz Rosinski on 23.09.2018.
+ * Created by Grzegorz Rosinski on 23.09.2018.
  */
 @Module
 abstract class ActivityBuilder {

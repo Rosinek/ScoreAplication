@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Application;
 
 import com.example.rosinek.scoreapp.di.DaggerAppComponent;
-import com.google.firebase.FirebaseApp;
 import com.orhanobut.hawk.Hawk;
 import com.orhanobut.hawk.NoEncryption;
 
@@ -28,8 +27,6 @@ public class App extends Application implements HasActivityInjector {
         Hawk.init(getApplicationContext())
                 .setEncryption(new NoEncryption())
                 .build();
-
-        FirebaseApp.initializeApp(this);
 
         DaggerAppComponent.builder()
                 .application(this)

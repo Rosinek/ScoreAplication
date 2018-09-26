@@ -3,6 +3,7 @@ package com.example.rosinek.scoreapp.ui.news;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -38,7 +39,7 @@ public class NewsFragment extends Fragment implements NewsView {
     NewsPresenter presenter;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_news, container, false);
         ButterKnife.bind(this, view);
@@ -47,6 +48,11 @@ public class NewsFragment extends Fragment implements NewsView {
         return view;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        presenter.getNews();
+    }
 
     @Override
     public void showMessage(String message) {
@@ -62,10 +68,8 @@ public class NewsFragment extends Fragment implements NewsView {
 
     @Override
     public void onItemSelected(int adapterPosition) {
-
         Intent intent = new Intent(getActivity(), WebViewerActivity.class);
         intent.putExtra(Preferences.NEWS_LINK, newsItems.get(adapterPosition).getLink());
-
         Objects.requireNonNull(getActivity()).startActivity(intent);
     }
 
@@ -73,4 +77,5 @@ public class NewsFragment extends Fragment implements NewsView {
         rvNews.setHasFixedSize(true);
         rvNews.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
+
 }

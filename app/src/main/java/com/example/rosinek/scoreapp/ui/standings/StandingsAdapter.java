@@ -14,7 +14,6 @@ import com.example.rosinek.scoreapp.R;
 import com.example.rosinek.scoreapp.model.Api.GSMRS.RankingObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
